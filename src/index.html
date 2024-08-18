@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiMtJG_PC4lsb3-GZAiTZkUXAm3VlkJC1Ag&s" >
+    <title>Youtube Subscribers</title>
+    <style>
+        body {
+            background-color:aqua;
+            display: flex;
+            justify-content: center;
+            margin: 80px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px black;
+            background-color:blueviolet;
+        }
+        .routes {
+            background-color: #007bff;
+            color: aliceblue;
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        li{
+            padding: 10px;
+        }
+        input{
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #subscriberIdButton{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>YouTube Subscribers</h2>
+        <hr>
+        <h2 class="text">These are the routes in this API</h2>
+        <hr>
+        <h2 class="text">You can try entering each route using the routes given below</h2>
+        <hr>
+        <!-- Some info about routes -->
+        <ul>
+            <li><a class="routes" href="/subscribers">/subscribers</a>
+            </li>
+            <li><a class="routes" href="/subscribers/name">/subscribers/names</a>
+            </li>
+            <li><input type="text" id="subscriberId" placeholder="Enter ID">
+                <a class="routes" id="subscriberIdButton">/subscribers/:id</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        subscriberIdButton.addEventListener("click", function() {
+            var Id = document.getElementById("subscriberId").value;
+            if(Id === ""){
+                alert("Enter an ID")
+            }else{
+                window.location.href = "http://localhost:3003/subscribers/"+Id;
+            }
+        })
+    </script>
+</body>
+
+</html>
