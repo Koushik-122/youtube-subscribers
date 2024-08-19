@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 require("dotenv").config();
 
 // Connect to DATABASE
-const DATABASE_URL = "mongodb+srv://user1:test123@cluster0.vlfjndm.mongodb.net/project?retryWrites=true&w=majority&appName=Cluster0"
+const DATABASE_URL = "process.env.DATABASE_URL"
 mongoose.connect(DATABASE_URL)
 const db = mongoose.connection
 db.on('error', (err) => console.log(err))
